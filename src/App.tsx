@@ -2,7 +2,8 @@ import './App.module.scss'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from './Components/Layout/layout';
 import Home from './Pages/Home/home';
-import SignIn from './Pages/SignUp/signIn';
+import SignIn from './Pages/SignIn/signIn';
+import User from './Pages/User/user';
 
 function App() {
 
@@ -20,6 +21,11 @@ function App() {
           path: "/sign-in",
           element:<SignIn/>,
         },
+
+        {
+          path: "/user",
+          element:<User/>,
+        }
       ],
     },
   ]);
