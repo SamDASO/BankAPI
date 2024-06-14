@@ -2,6 +2,7 @@ import './App.module.scss'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from './Components/Layout/layout';
 import Home from './Pages/Home/home';
+import SignIn from './Pages/SignUp/signIn';
 
 function App() {
 
@@ -13,6 +14,11 @@ function App() {
         {
           path: "",
           element:<Home/>,
+        },
+
+        {
+          path: "/sign-in",
+          element:<SignIn/>,
         },
       ],
     },
