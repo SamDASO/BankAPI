@@ -1,6 +1,6 @@
 import style from "./hero.module.scss";
 
-function Hero() {
+const Hero = () => {
 
   return (
     <div className={style.hero}>

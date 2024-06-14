@@ -21,7 +21,7 @@ const chatP = "Need to talk to a representative? You can get in touch through ou
 const moneyP = "The more you save with us, the higher your interest rate will be!";
 const securityP = "We use top of the line encryption to make sure your data and money is always safe.";
 
-function Features() {
+const Features = () => {
 
   return (
     <section className={style.features}>
