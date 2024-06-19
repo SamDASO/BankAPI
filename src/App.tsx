@@ -18,12 +18,12 @@ function App() {
         },
 
         {
-          path: "/sign-in",
+          path: "/login",
           element:<SignIn/>,
         },
 
         {
-          path: "/user",
+          path: "/profile",
           element:<User/>,
         }
       ],

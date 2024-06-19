@@ -17,7 +17,7 @@ const NavBar = () => {
       <h1 className={style.srOnly}>Argent Bank</h1>
     </Link>
     <div>
-      <Link to="/sign-in" className={style.mainNavItem}>
+      <Link to="/login" className={style.mainNavItem}>
       <FontAwesomeIcon icon={faCircleUser} />
         Sign In
       </Link>
