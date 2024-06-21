@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
 import style from "./signInForm.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 
 const SignInForm = () => {
 
   return (
   <section className={style.signInContent}>
-    <i className="fa fa-user-circle sign-in-icon"></i>
+    <FontAwesomeIcon icon={faCircleUser} />
     <h1>Sign In</h1>
     <form>
       <div className={style.inputWrapper}>
@@ -18,10 +19,7 @@ const SignInForm = () => {
         <input type="checkbox" id="remember-me" /><label htmlFor="remember-me"
           >Remember me</label>
       </div>
-      {/* Placeholder text due to static site */}
-      <Link to="user" className={style.signInButton}>Sign In</Link>
-      {/* The button below is commented out because of the static site */}
-      {/* <button className={style.signInButton}>Sign In</button> */}
+      <button className={style.signInButton}>Sign In</button>
 
       
     </form>

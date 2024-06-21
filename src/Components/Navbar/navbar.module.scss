@@ -17,7 +17,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 5px 20px;
-
+    
     & a {
         font-weight: bold;
     color: #2c3e50;
@@ -30,6 +30,10 @@
    
   
   .mainNavItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:5px;
     text-decoration: none;
     margin-right: 0.5rem;
   }

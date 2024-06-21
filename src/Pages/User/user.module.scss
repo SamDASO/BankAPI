@@ -1,4 +1,9 @@
-.srOnly {
+.main {
+    flex: 1;
+    background-color: #12002b;
+  }
+
+  .srOnly {
     border: 0 !important;
     clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
     -webkit-clip-path: inset(50%) !important;
@@ -12,13 +17,9 @@
     white-space: nowrap !important; /* 3 */
   }
 
-  .features {
-    display: flex;
-    flex-direction: column;
+  .header {
+    color: #fff;
+    margin-bottom: 2rem;
   }
 
-  .featuresDiv {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  
