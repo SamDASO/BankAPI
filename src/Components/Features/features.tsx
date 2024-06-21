@@ -26,9 +26,10 @@ const Features = () => {
   return (
     <section className={style.features}>
     <h2 className= {style.srOnly}>Features</h2>
+    <div className={style.featuresDiv}>
     <Feature icon={chat} alt={chatAlt} title={chatTitle} paragraph={chatP} />
     <Feature icon={money} alt={moneyAlt} title={moneyTitle} paragraph={moneyP} />
-    <Feature icon={security} alt={securityAlt} title={securityTitle} paragraph={securityP} />
+    <Feature icon={security} alt={securityAlt} title={securityTitle} paragraph={securityP} /></div>
   </section>
   )
 }
