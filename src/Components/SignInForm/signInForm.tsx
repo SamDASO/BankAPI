@@ -1,11 +1,11 @@
 import style from "./signInForm.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { fetchUserProfile, login } from '../../methods/api';
-import { RootState } from "../../Store/store";
+import { login } from "../../methods/api";
+
 
 
 
@@ -16,15 +16,8 @@ const SignInForm = () => {
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const token = useSelector((state: RootState) => state.auth.token);
 
   //behavior
-
-  useEffect(() => {
-    if (token) {
-      fetchUserProfile(token, dispatch);
-    }
-  }, [token, dispatch, navigate]);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
