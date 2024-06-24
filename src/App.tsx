@@ -4,8 +4,6 @@ import Layout from './Components/Layout/layout';
 import Home from './Pages/Home/home';
 import SignIn from './Pages/SignIn/signIn';
 import User from './Pages/User/user';
-import store from './store/store'
-import { Provider } from 'react-redux';
 import ProtectedRoute from './methods/protectedRoute';
 
 function App() {
@@ -27,16 +25,14 @@ function App() {
 
         {
           path: "/profile",
-          element:(<ProtectedRoute><User/></ProtectedRoute>),
+          element:<ProtectedRoute><User/></ProtectedRoute>,
         }
       ],
     },
   ]);
 
   return (
-    <Provider store={store}>
       <RouterProvider router={router} />
-    </Provider>
   );
 }
 

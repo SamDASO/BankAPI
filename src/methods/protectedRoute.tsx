@@ -1,16 +1,16 @@
 import { Navigate } from "react-router-dom";
-import { useSelector } from 'react-redux';
-import { RootState } from "../store/store";
+import { selectCurrentToken } from "./auth";
 
 interface ProtectedRouteProps {
     children: JSX.Element;
 }
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
-    const token = useSelector((state: RootState) => state.auth.userToken);
-  
+    const token = selectCurrentToken;
+    console.log('ProtectedRoute token:', token);
+
     if (!token) {
-      return <Navigate to="/login" />;
+            return <Navigate to="/login" />;
     }
   
     return children;

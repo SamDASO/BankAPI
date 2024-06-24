@@ -1,20 +1,22 @@
 import axios from 'axios';
-import { Dispatch } from 'redux';
-import { setToken } from '../methods/auth';
+import { AppDispatch } from '../Store/store';
+import { setToken } from './auth';
 
-interface LoginCredentials {
+interface LoginData {
   email: string;
   password: string;
 }
 
-export const login = async (credentials: LoginCredentials, dispatch: Dispatch) => {
+export const login = async (data: LoginData, dispatch: AppDispatch) => {
   try {
-    const response = await axios.post('http://localhost:3001/api/v1/user/login', credentials);
+    const response = await axios.post('http://localhost:3001/api/v1/user/login', data);
+
     const token = response.data.token;
     if (token) {
       dispatch(setToken(token));
     }
   } catch (error) {
+    alert("Erreur d'authentification")
     console.error('Login failed:', error);
   }
 };

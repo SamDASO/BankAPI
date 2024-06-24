@@ -19,13 +19,16 @@ const SignInForm = () => {
 
   //behavior
 
+
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
       await login({ email, password }, dispatch);
       navigate('/profile');
+      console.log('Login successful, navigating to profile');
     } catch (error) {
-      console.error('Login failed:', error);
+       console.error('Login failed:', error);
     }
   };
 
