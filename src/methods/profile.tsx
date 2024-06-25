@@ -6,8 +6,8 @@ interface ProfileState {
   }
   
   const initialState: ProfileState = {
-    firstName: null,
-    lastName: null,
+    firstName: localStorage.getItem('firstName'),
+    lastName: localStorage.getItem('lastName'),
   };
 
 const profileSlice = createSlice({
@@ -17,10 +17,14 @@ const profileSlice = createSlice({
         setName: (state, action: PayloadAction<{ firstName: string; lastName: string }>) => {
             state.firstName = action.payload.firstName;
             state.lastName = action.payload.lastName;
+            localStorage.setItem('firstName', action.payload.firstName);
+            localStorage.setItem('lastName', action.payload.lastName);
           },
           clearName: (state) => {
             state.firstName = null;
             state.lastName = null;
+            localStorage.removeItem('firstName');
+            localStorage.removeItem('lastName');
           },
     }
 })
