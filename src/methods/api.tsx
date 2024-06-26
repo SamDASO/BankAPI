@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { AppDispatch } from '../Store/store';
-import { setToken } from './auth';
-import { setName } from './profile';
+import { clearToken, setToken } from './auth';
+import { clearName, setName } from './profile';
 
 //TOKEN
 interface LoginData {
@@ -43,5 +43,10 @@ const fetchUserProfile = async (token: string, dispatch: AppDispatch) => {
   } catch (error) {
     console.error('Failed to fetch user profile:', error);
   }
+};
+
+export const signOut = (dispatch: AppDispatch) => {
+  dispatch(clearToken());
+  dispatch(clearName());
 };
 
