@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { AppDispatch } from '../Store/store';
-import { clearToken, setToken } from './auth';
-import { clearName, setName } from './profile';
+import { AppDispatch } from '../store/store';
+import { clearToken, setToken } from '../store/auth';
+import { clearName, setName } from '../store/profile';
 
 //TOKEN
 interface LoginData {

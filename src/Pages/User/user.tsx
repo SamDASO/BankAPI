@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-import Account from "../../Components/Account/account";
+import Account from "../../components/Account/account";
 import style from "./user.module.scss";
-import { RootState } from "../../Store/store";
+import { RootState } from "../../store/store";
 
 
 

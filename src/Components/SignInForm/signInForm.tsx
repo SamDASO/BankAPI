@@ -4,7 +4,7 @@ import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { login } from "../../methods/api";
+import { login } from "../../api/api";
 
 
 

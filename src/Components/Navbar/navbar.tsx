@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons/faRightFromBracket";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../Store/store";
-import { signOut } from "../../methods/api";
+import { RootState } from "../../store/store";
+import { signOut } from "../../api/api";
 
 const NavBar = () => {
 
