@@ -30,14 +30,14 @@ const NavBar = () => {
     </Link>
     { !token ? (
     <div>
-      <Link to="/login" className={style.mainNavItem}>
-      <FontAwesomeIcon icon={faCircleUser} />
+      <Link to="/login" className={style.mainNavItem} >
+      <FontAwesomeIcon icon={faCircleUser}/>
         Sign In
       </Link>
     </div>
       ) : (
         <div className={style.divProfile}>
-      <Link to="/profile" className={style.mainNavItem}>
+      <Link to="/profile" className={style.mainNavItem} aria-labelledby="user profile">
       <FontAwesomeIcon icon={faCircleUser} />
         {firstName}
       </Link>

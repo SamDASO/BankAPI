@@ -4,7 +4,7 @@ import Layout from './components/Layout/layout';
 import Home from './pages/Home/home';
 import SignIn from './pages/SignIn/signIn';
 import User from './pages/User/user';
-import ProtectedRoute from './protectedRoute/protectedRoute';
+import ProtectedRoute from './router/protectedRoute';
 
 function App() {
 

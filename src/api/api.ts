@@ -50,3 +50,19 @@ export const signOut = (dispatch: AppDispatch) => {
   dispatch(clearName());
 };
 
+export const updateUserProfile = async (data: { firstName: string; lastName: string }, dispatch:AppDispatch) => {
+  const token = localStorage.getItem('token');
+  if (!token) throw new Error('No token found');
+
+  try {
+    const response = await axios.put(`http://localhost:3001/api/v1/user/profile`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const { firstName, lastName } = response.data.body;
+    dispatch(setName({ firstName, lastName }));
+  } catch (error) {
+    console.error('Failed to update user profile');
+  }
+};
