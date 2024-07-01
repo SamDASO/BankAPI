@@ -1,5 +1,5 @@
-import Features from "../../Components/Features/features";
-import Hero from "../../Components/Hero/hero";
+import Features from "../../components/Features/features";
+import Hero from "../../components/Hero/hero";
 import style from "./home.module.scss";
 
 

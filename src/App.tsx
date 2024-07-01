@@ -1,12 +1,10 @@
 import './App.module.scss'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from './Components/Layout/layout';
-import Home from './Pages/Home/home';
-import SignIn from './Pages/SignIn/signIn';
-import User from './Pages/User/user';
-import store from './store/store'
-import { Provider } from 'react-redux';
-import ProtectedRoute from './methods/protectedRoute';
+import Layout from './components/Layout/layout';
+import Home from './pages/Home/home';
+import SignIn from './pages/SignIn/signIn';
+import User from './pages/User/user';
+import ProtectedRoute from './router/protectedRoute';
 
 function App() {
 
@@ -27,16 +25,14 @@ function App() {
 
         {
           path: "/profile",
-          element:(<ProtectedRoute><User/></ProtectedRoute>),
+          element:<ProtectedRoute><User/></ProtectedRoute>,
         }
       ],
     },
   ]);
 
   return (
-    <Provider store={store}>
       <RouterProvider router={router} />
-    </Provider>
   );
 }
 
