@@ -19,8 +19,8 @@ export const login = async (data: LoginData, dispatch: AppDispatch) => {
       fetchUserProfile(token, dispatch)
     }
   } catch (error) {
-    alert("Erreur d'authentification");
-    console.error('Login failed:', error);
+        console.error('Login failed:', error);
+        throw error;
   }
 };
 

@@ -14,6 +14,7 @@ const SignInForm = () => {
   //state
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -21,11 +22,13 @@ const SignInForm = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+    setErrorMessage("");
     try {
       await login({ email, password }, dispatch);
       navigate('/profile');
     } catch (error) {
-       console.error('Login failed:', error);
+      console.error('Failed:', error);
+      setErrorMessage("Erreur d'authentification");
     }
   };
 
@@ -52,7 +55,7 @@ const SignInForm = () => {
           >Remember me</label>
       </div>
       <button className={style.signInButton} type="submit">Sign In</button>
-
+      {errorMessage && <div className={style.errorMessage}>{errorMessage}</div>}
       
     </form>
   </section>
