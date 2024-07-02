@@ -24,15 +24,18 @@ const User = () => {
 
   return(
     <main className={style.main}>
-      <div className={style.header}>
+      { isModaleOpen ? (
+        <div className={style.header}>
+        <h1>Welcome back<br />{userName}!</h1>
+      <div className={style.editModale}>
+        <EditNameForm closeModale={closeModale}/>
+      </div>
+      </div>): 
+      (<div className={style.header}>
         <h1>Welcome back<br />{userName}!</h1>
         <button className={style.editButton} onClick={editModale}>Edit Name</button>
       </div>
-      { isModaleOpen && (
-      <div className={style.editModale}>
-        <button className={style.editClose} onClick={closeModale}>X</button>
-        <EditNameForm closeModale={closeModale}/>
-      </div>)}
+      )}
 
       <h2 className={style.srOnly}>Accounts</h2>
         <Account title={"Argent Bank Checking (x8349)"} amount={"2,082.79"} description={"Available Balance"}/>
