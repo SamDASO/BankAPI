@@ -11,29 +11,29 @@ const User = () => {
   const firstName = useSelector((state: RootState) => state.profile.firstName);
   const lastName = useSelector((state: RootState) => state.profile.lastName);
   const userName = `${firstName} ${lastName}`
-  const [isModaleOpen, setIsModaleOpen] = useState(false);
+  const [isFormDisplayed, setIsFormDisplayed] = useState(false);
 
   
-  const editModale = () => {
-      setIsModaleOpen(true);
+  const displayForm = () => {
+      setIsFormDisplayed(true);
   }
 
-  const closeModale = () => {
-    setIsModaleOpen(false);
+  const hideForm = () => {
+    setIsFormDisplayed(false);
   }
 
   return(
     <main className={style.main}>
-      { isModaleOpen ? (
+      { isFormDisplayed ? (
         <div className={style.header}>
         <h1>Welcome back<br />{userName}!</h1>
       <div className={style.editModale}>
-        <EditNameForm closeModale={closeModale}/>
+        <EditNameForm hideForm={hideForm}/>
       </div>
       </div>): 
       (<div className={style.header}>
         <h1>Welcome back<br />{userName}!</h1>
-        <button className={style.editButton} onClick={editModale}>Edit Name</button>
+        <button className={style.editButton} onClick={displayForm}>Edit Name</button>
       </div>
       )}
 

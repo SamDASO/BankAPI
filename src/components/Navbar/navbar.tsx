@@ -5,8 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons/faRightFromBracket";
 import { useDispatch, useSelector } from "react-redux";
+import { clearToken } from "../../store/auth";
+import { clearName } from "../../store/profile";
 import { RootState } from "../../store/store";
-import { signOut } from "../../api/api";
 
 const NavBar = () => {
 
@@ -15,8 +16,10 @@ const NavBar = () => {
   const dispatch = useDispatch();
   
   function handleSignOut() {
-    signOut(dispatch);
+    dispatch(clearToken());
+    dispatch(clearName());
   }
+
 
   return (
   <nav className={style.mainNav}>
@@ -37,7 +40,7 @@ const NavBar = () => {
     </div>
       ) : (
         <div className={style.divProfile}>
-      <Link to="/profile" className={style.mainNavItem} aria-labelledby="user profile">
+      <Link to="/profile" className={style.mainNavItem} aria-label="user profile">
       <FontAwesomeIcon icon={faCircleUser} />
         {firstName}
       </Link>
