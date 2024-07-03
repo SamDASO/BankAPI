@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { AppDispatch } from '../store/store';
-import { clearToken, setToken } from '../store/auth';
-import { clearName, setName } from '../store/profile';
+import { setToken } from '../store/auth';
+import { setName } from '../store/profile';
 
 //TOKEN
 interface LoginData {
@@ -9,9 +9,11 @@ interface LoginData {
   password: string;
 }
 
+const baseApi = "http://localhost:3001/api/v1";
+
 export const login = async (data: LoginData, dispatch: AppDispatch) => {
   try {
-    const response = await axios.post('http://localhost:3001/api/v1/user/login', data);
+    const response = await axios.post(`${baseApi}/user/login`, data);
 
     const token = response.data.body.token;
     if (token) {
@@ -28,7 +30,7 @@ export const login = async (data: LoginData, dispatch: AppDispatch) => {
 const fetchUserProfile = async (token: string, dispatch: AppDispatch) => {
   try {
     const response = await axios.post(
-      'http://localhost:3001/api/v1/user/profile',
+      `${baseApi}/user/profile`,
       {},
       {
         headers: {
@@ -44,17 +46,13 @@ const fetchUserProfile = async (token: string, dispatch: AppDispatch) => {
   }
 };
 
-export const signOut = (dispatch: AppDispatch) => {
-  dispatch(clearToken());
-  dispatch(clearName());
-};
 
 export const updateUserProfile = async (data: { firstName: string; lastName: string }, dispatch:AppDispatch) => {
   const token = localStorage.getItem('token');
   if (!token) throw new Error('No token found');
 
   try {
-    const response = await axios.put(`http://localhost:3001/api/v1/user/profile`, data, {
+    const response = await axios.put(`${baseApi}/user/profile`, data, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

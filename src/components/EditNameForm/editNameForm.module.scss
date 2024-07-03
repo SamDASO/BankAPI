@@ -26,14 +26,28 @@
     gap:8px;
 
     & .saveButton, .closeButton{
-    border-radius: 3px;
-    border: #6458F5 1px solid;
-    background-color: white;
-    box-shadow: none;
-    color:#6458F5;
-    font-weight: bold;
-    text-align: center;
-    width:100px;
-    appearance: none;
+        border-radius: 3px;
+        color: white;
+        box-shadow: none;
+        font-weight: bold;
+        text-align: center;
+        width:100px;
+        appearance: none;
+    }
+
+    & .saveButton{
+        border: #00bc77 1px solid;
+        background-color:#00bc77;
+    }
+
+    & .closeButton{
+        border: #3e4140 1px solid;
+        background-color:#3e4140;
+    }
 }
+
+.error {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
 }
