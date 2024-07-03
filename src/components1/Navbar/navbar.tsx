@@ -37,7 +37,7 @@ const NavBar = () => {
     </div>
       ) : (
         <div className={style.divProfile}>
-      <Link to="/profile" className={style.mainNavItem} aria-labelledby="user profile">
+      <Link to="/profile" className={style.mainNavItem} aria-label="user profile">
       <FontAwesomeIcon icon={faCircleUser} />
         {firstName}
       </Link>

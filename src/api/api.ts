@@ -25,7 +25,6 @@ export const login = async (data: LoginData, dispatch: AppDispatch) => {
 };
 
 
-
 const fetchUserProfile = async (token: string, dispatch: AppDispatch) => {
   try {
     const response = await axios.post(
