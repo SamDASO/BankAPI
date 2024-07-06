@@ -26,7 +26,7 @@ const User = () => {
     <main className={style.main}>
       { isFormDisplayed ? (
         <div className={style.header}>
-        <h1>Welcome back<br />{userName}!</h1>
+        <h1>Welcome back</h1>
       <div className={style.editModale}>
         <EditNameForm hideForm={hideForm}/>
       </div>
